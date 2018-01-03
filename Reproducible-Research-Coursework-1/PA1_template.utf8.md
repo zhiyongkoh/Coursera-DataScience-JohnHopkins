@@ -1,8 +1,9 @@
 ---
-title: "Reproducible Research: Peer Assessment 1"
-output: 
+title: 'Reproducible Research: Peer Assessment 1'
+output:
+  pdf_document: default
   html_document:
-    keep_md: true
+    keep_md: yes
 ---
 
 ## Loading and preprocessing the data
@@ -41,7 +42,7 @@ steps_perday <- aggregate(steps ~ date,data=activity, FUN=sum)
 hist(steps_perday$steps, main = "Histogram of Steps Per Day", xlab = "No. of steps", col = "blue")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
+![](PA1_template_files/figure-latex/unnamed-chunk-4-1.pdf)<!-- --> 
 
 3. Calculate and report the mean and median of the total number of steps taken per day
 
@@ -75,7 +76,7 @@ avg_steps_int <- aggregate(steps~interval, activity, mean)
 plot(avg_steps_int$interval, avg_steps_int$steps, type = "l", main = "Average steps taken per 5 minutes interval", xlab = "Interval (minutes)", ylab = "No. of Steps")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-7-1.png)<!-- -->
+![](PA1_template_files/figure-latex/unnamed-chunk-7-1.pdf)<!-- --> 
 
 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -127,7 +128,7 @@ steps_perday_clean <- as.data.table(aggregate(steps ~ date, data=activity_clean,
 hist(steps_perday_clean$steps, col = "blue", xlab = "Steps per day", ylim = c(0,30), main = "Total number of steps per day", breaks = seq(0,25000,by=5000))
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-12-1.png)<!-- -->
+![](PA1_template_files/figure-latex/unnamed-chunk-12-1.pdf)<!-- --> 
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
@@ -158,4 +159,4 @@ plot<- ggplot(activity_avg_clean, aes(x = interval , y = steps, color = dayofwee
 print(plot)
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-14-1.png)<!-- -->
+![](PA1_template_files/figure-latex/unnamed-chunk-14-1.pdf)<!-- --> 

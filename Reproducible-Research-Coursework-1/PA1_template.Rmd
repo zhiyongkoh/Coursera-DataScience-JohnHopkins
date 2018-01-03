@@ -1,8 +1,9 @@
 ---
-title: "Reproducible Research: Peer Assessment 1"
-output: 
+title: 'Reproducible Research: Peer Assessment 1'
+output:
+  pdf_document: default
   html_document:
-    keep_md: true
+    keep_md: yes
 ---
 
 ## Loading and preprocessing the data
@@ -69,20 +70,43 @@ nrow(activity[which(is.na(activity$steps)),])
 
 2. Devise a strategy for filling in all of the missing values in the dataset. The strategy does not need to be sophisticated. For example, you could use the mean/median for that day, or the mean for that 5-minute interval, etc.
 ```{r}
-avg_steps_perday <- as.data.table(aggregate(steps ~ date,na.rm = TRUE, data=activity, FUN=mean))
-
-activity_old <- copy(activity)
-
-activity <- activity[which(is.na(activity$steps)), steps:= avg_steps_perday[which(avg_steps_perday$date==date)]$steps]
+avg_steps_interval <- setnames(data.table(unique(activity$date)),c("date"))
+avg_steps_interval <- as.data.table(aggregate(steps ~ interval,na.rm = TRUE, data=activity, FUN=mean))
 
 ```
 
 
 3. Create a new dataset that is equal to the original dataset but with the missing data filled in.
+```{r}
+activity_clean <- transform(activity, steps = ifelse(is.na(activity$steps), yes = avg_steps_interval$steps, no = activity$steps))
+
+```
+
 4. Make a histogram of the total number of steps taken each day and Calculate and report the mean and median total number of steps taken per day. Do these values differ from the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps?
+```{r}
+steps_perday_clean <- as.data.table(aggregate(steps ~ date, data=activity_clean, FUN=sum))
+
+hist(steps_perday_clean$steps, col = "blue", xlab = "Steps per day", ylim = c(0,30), main = "Total number of steps per day", breaks = seq(0,25000,by=5000))
+```
+
 ## Are there differences in activity patterns between weekdays and weekends?
 
 #### For this part the weekdays() function may be of some help here. Use the dataset with the filled-in missing values for this part.
 
 1. Create a new factor variable in the dataset with two levels - "weekday" and "weekend" indicating whether a given date is a weekday or weekend day.
+```{r}
+library(chron)
+
+activity_clean[is.weekend(date),dayofweek:="Weekend"][!is.weekend(date),dayofweek:="Weekday"]
+
+```
+
 2. Make a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). See the README file in the GitHub repository to see an example of what this plot should look like using simulated data.
+```{r}
+activity_avg_clean <- aggregate(steps~interval + dayofweek, activity_clean, mean, na.rm = TRUE)
+plot<- ggplot(activity_avg_clean, aes(x = interval , y = steps, color = dayofweek)) +
+       geom_line() +
+       labs(title = "Average Steps taken by Day of Week", x = "Interval", y = "Average No. steps") +
+       facet_wrap(~dayofweek, ncol = 1, nrow=2)
+print(plot)
+```
