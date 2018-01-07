@@ -1,8 +1,9 @@
 ---
-title: "Reproducible Research: Peer Assessment 1"
-output: 
+title: 'Reproducible Research: Peer Assessment 1'
+output:
   html_document:
-    keep_md: true
+    keep_md: yes
+  pdf_document: default
 ---
 
 ## Loading and preprocessing the data
@@ -14,7 +15,7 @@ library(ggplot2)
 ```
 
 ```
-## Warning: package 'ggplot2' was built under R version 3.4.3
+## Warning: package 'ggplot2' was built under R version 3.3.3
 ```
 
 ```r
@@ -137,14 +138,23 @@ hist(steps_perday_clean$steps, col = "blue", xlab = "Steps per day", ylim = c(0,
 
 ```r
 library(chron)
-```
 
-```
-## Warning: package 'chron' was built under R version 3.4.3
-```
-
-```r
 activity_clean[is.weekend(date),dayofweek:="Weekend"][!is.weekend(date),dayofweek:="Weekday"]
+```
+
+```
+##            steps       date interval dayofweek
+##     1: 1.7169811 2012-10-01        0   Weekend
+##     2: 0.3396226 2012-10-01        5   Weekend
+##     3: 0.1320755 2012-10-01       10   Weekend
+##     4: 0.1509434 2012-10-01       15   Weekend
+##     5: 0.0754717 2012-10-01       20   Weekend
+##    ---                                        
+## 17564: 4.6981132 2012-11-30     2335   Weekday
+## 17565: 3.3018868 2012-11-30     2340   Weekday
+## 17566: 0.6415094 2012-11-30     2345   Weekday
+## 17567: 0.2264151 2012-11-30     2350   Weekday
+## 17568: 1.0754717 2012-11-30     2355   Weekday
 ```
 
 2. Make a panel plot containing a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all weekday days or weekend days (y-axis). See the README file in the GitHub repository to see an example of what this plot should look like using simulated data.
