@@ -1,0 +1,24 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1515395751207.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3694702802",
+    "id" : "73B667FF",
+    "lastKnownWriteTime" : 1515406358,
+    "last_content_update" : 1515406358441,
+    "path" : "~/GitHub/Coursera-DataScience-JohnHopkins/Reproducible-Research-Coursework-2/Reproducible-Research-Coursework-2.Rmd",
+    "project_path" : "Reproducible-Research-Coursework-2.Rmd",
+    "properties" : {
+        "chunk_output_type" : "inline",
+        "cursorPosition" : "38,14",
+        "scrollLine" : "23",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

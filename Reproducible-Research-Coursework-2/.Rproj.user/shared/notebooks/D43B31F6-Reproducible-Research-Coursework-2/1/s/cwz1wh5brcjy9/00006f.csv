@@ -1,0 +1,7 @@
+"0","library(reshape2)"
+"0","library(ggplot2)"
+"0","data_evtype_population <- data_evtype_population[order(FATALITIES, INJURIES,decreasing=TRUE),.SD[1:5]]"
+"0","data_q1 <- melt(data_evtype_population, ids.vars = c(""EVTYPE""),measure.vars = c(""FATALITIES"",""INJURIES""))"
+"0","names(data_q1) <- c(""Event Type"", ""Types"" ,""Number of case"")"
+"0","ggplot(data_q1, aes(x=`Event Type`, y=`Number of case`, fill=`Types`))+"
+"0","    geom_bar(stat='identity')"

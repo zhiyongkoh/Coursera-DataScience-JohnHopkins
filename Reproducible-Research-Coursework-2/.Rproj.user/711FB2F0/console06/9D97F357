@@ -1,0 +1,19 @@
+[0m[0KMicrosoft Windows [Version 10.0.14393][0K[?25l
+(c) 2016 Microsoft Corporation. All rights reserved.[0K
+[0K
+C:\Users\zhikoh\Documents\GitHub\Coursera-DataScience-JohnHopkins\Reproducible-[0KR
+esearch-Coursework-2>[0K
+C:\Users\zhikoh\Documents\GitHub\Coursera-DataScience-JohnHopkins\Reproducible-[0KR
+esearch-Coursework-2>[0K[?25h[?25l[3AC:\Users\zhikoh\Documents\GitHub\Coursera-DataScience-JohnHopkins\Reproducible-Research-Coursework-2>[0K
+C:\Users\zhikoh\Documents\GitHub\Coursera-DataScience-JohnHopkins\Reproducible-Research-Coursework-2>[0K
+[0K
+[0K[2A[102G[?25h[?25lC:\Users\zhikoh\Documents\GitHub\Coursera-DataScience-JohnHopkins\Reproducible-Research-Coursework-2>library(reshape2)[0K
+'library' is not recognized as an internal or external command,[0K
+operable program or batch file.[0K
+[0K
+C:\Users\zhikoh\Documents\GitHub\Coursera-DataScience-JohnHopkins\Reproducible-Research-Coursework-2>[0K[?25hggplot(data_q1[order(value),decreas[0Ki[?25l
+ng=F], aes(x=EVTYPE, y=value, fill=variable))+[0K
+'ggplot' is not recognized as an internal or external command,[0K
+operable program or batch file.[0K
+[0K
+C:\Users\zhikoh\Documents\GitHub\Coursera-DataScience-JohnHopkins\Reproducible-Research-Coursework-2>[0K[?25h
