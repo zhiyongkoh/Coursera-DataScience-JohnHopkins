@@ -1,0 +1,1 @@
+"0","avg_steps_int <- aggregate(steps~interval, activity, mean)"

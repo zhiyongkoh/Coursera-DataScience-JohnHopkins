@@ -1,0 +1,1 @@
+"0","plot(avg_steps_int$interval, avg_steps_int$steps, type = ""l"", main = ""Average steps taken per 5 minutes interval"", xlab = ""Interval (minutes)"", ylab = ""No. of Steps"")"

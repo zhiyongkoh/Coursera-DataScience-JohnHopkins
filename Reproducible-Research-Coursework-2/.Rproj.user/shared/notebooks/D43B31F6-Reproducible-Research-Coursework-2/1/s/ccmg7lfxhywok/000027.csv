@@ -1,3 +1,0 @@
-"0","library(dplyr)"
-"0","### Data manipulation to find out the total fatalities and injuries on human by types of events"
-"0","data_evtype_population <- data.table(data %>% group_by(EVTYPE) %>% summarise_at(vars(FATALITIES,INJURIES), sum))"

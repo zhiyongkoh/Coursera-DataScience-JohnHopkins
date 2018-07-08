@@ -1,0 +1,1 @@
+"0","hist(steps_perday$steps, main = ""Histogram of Steps Per Day"", xlab = ""No. of steps"", col = ""blue"")"

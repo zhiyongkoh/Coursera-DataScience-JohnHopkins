@@ -1,0 +1,2 @@
+"0","steps_perday_clean <- as.data.table(aggregate(steps ~ date, data=activity_clean, FUN=sum))"
+"0","hist(steps_perday_clean$steps, col = ""blue"", xlab = ""Steps per day"", ylim = c(0,30), main = ""Total number of steps per day"", breaks = seq(0,25000,by=5000))"

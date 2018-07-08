@@ -1,0 +1,1 @@
+"0","activity_clean <- transform(activity, steps = ifelse(is.na(activity$steps), yes = avg_steps_interval$steps, no = activity$steps))"

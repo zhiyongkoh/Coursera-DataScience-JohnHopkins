@@ -1,0 +1,6 @@
+"0","activity_avg_clean <- aggregate(steps~interval + dayofweek, activity_clean, mean, na.rm = TRUE)"
+"0","plot<- ggplot(activity_avg_clean, aes(x = interval , y = steps, color = dayofweek)) +"
+"0","       geom_line() +"
+"0","       labs(title = ""Average Steps taken by Day of Week"", x = ""Interval"", y = ""Average No. steps"") +"
+"0","       facet_wrap(~dayofweek, ncol = 1, nrow=2)"
+"0","print(plot)"

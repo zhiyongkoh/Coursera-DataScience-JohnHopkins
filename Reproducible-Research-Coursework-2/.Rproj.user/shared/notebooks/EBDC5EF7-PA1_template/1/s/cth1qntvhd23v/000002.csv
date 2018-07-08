@@ -1,0 +1,2 @@
+"0","library(chron)"
+"0","activity_clean[is.weekend(date),dayofweek:=""Weekend""][!is.weekend(date),dayofweek:=""Weekday""]"

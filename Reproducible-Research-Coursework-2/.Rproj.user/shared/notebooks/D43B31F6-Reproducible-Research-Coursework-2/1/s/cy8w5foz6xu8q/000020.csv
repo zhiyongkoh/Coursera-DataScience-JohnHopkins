@@ -1,9 +1,0 @@
-"0","library(data.table)"
-"0","### Reading data"
-"0","data <- fread(""repdata%2Fdata%2FStormData.csv"")"
-"1","Read 42.4% of 967216 rows"
-"1","Read 67.2% of 967216 rows"
-"1","Read 86.8% of 967216 rows"
-"1","Read 902297 rows and 37 (of 37) columns from 0.523 GB file in 00:00:05
-"
-"0","head(data)"

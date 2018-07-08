@@ -1,0 +1,2 @@
+"0","avg_steps_interval <- setnames(data.table(unique(activity$date)),c(""date""))"
+"0","avg_steps_interval <- as.data.table(aggregate(steps ~ interval,na.rm = TRUE, data=activity, FUN=mean))"
